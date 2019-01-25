@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class InteractionController : MonoBehaviour {
 
     public float speed;
-    public string holdInteraction;
-    public string pickUp;
+    public string holdInteraction="Hold0";
+    public string pickUp="PickUp0";
     public Image[] holdCounter;
 
     private Dictionary<InteractableObject, float> holdTime;
@@ -20,7 +20,9 @@ public class InteractionController : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         holdTime = new Dictionary<InteractableObject, float>();
-	}
+        holdInteraction = "Hold0";
+        pickUp = "PickUp0";
+    }
 	
 	// Update is called once per frame
 	void Update () {
