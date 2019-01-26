@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 65508372457645202}
   - component: {fileID: 114348090578497674}
   m_Layer: 0
-  m_Name: Gardine
+  m_Name: Curtain 1
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
