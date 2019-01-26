@@ -14988,7 +14988,7 @@ Transform:
   - {fileID: 337148238}
   - {fileID: 244641368}
   m_Father: {fileID: 714014193}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &475032948
 Animator:
@@ -23130,7 +23130,6 @@ Transform:
   - {fileID: 1491538245}
   - {fileID: 201904113}
   - {fileID: 1574801505}
-  - {fileID: 1040880454}
   - {fileID: 475032947}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -30858,6 +30857,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdTime: 1
   dropOffPoints: []
+  <state>k__BackingField: 0
+  <isMovable>k__BackingField: 0
+  gameManager: {fileID: 0}
+  currentPlayer: {fileID: 0}
   mirrorOpen: 0
   countPoints: 0
   closedMirror: {fileID: 778354120}
@@ -31096,7 +31099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1037337546
 Transform:
   m_ObjectHideFlags: 0
@@ -31184,56 +31187,6 @@ Transform:
   m_Father: {fileID: 439410922}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1040880453
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 100102, guid: 635c46113350c914a82dd5057d171009,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1040880454}
-  - component: {fileID: 1040880455}
-  m_Layer: 0
-  m_Name: Princess (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1040880454
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 400102, guid: 635c46113350c914a82dd5057d171009,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1040880453}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 714014193}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1040880455
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: 635c46113350c914a82dd5057d171009,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1040880453}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 635c46113350c914a82dd5057d171009, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1042005118
 GameObject:
   m_ObjectHideFlags: 0
@@ -51067,7 +51020,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 7f6ccf51e2dbd044d94e4aa4883e5d5a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a2978632352638747bbaa8a0909317d2, type: 2}
+      objectReference: {fileID: 2100000, guid: 60d14d7de4059e04c910ef4d6f56f420, type: 2}
     - target: {fileID: 400000, guid: 7f6ccf51e2dbd044d94e4aa4883e5d5a, type: 3}
       propertyPath: m_LocalScale.x
       value: 60
@@ -51108,7 +51061,7 @@ MonoBehaviour:
   dropOffPoints: []
   open: {r: 0, g: 0, b: 0, a: 0}
   closed: {r: 0, g: 0, b: 0, a: 0}
-  godRay: {fileID: 0}
+  godRay: {fileID: 1037337545}
 --- !u!1 &1679688347
 GameObject:
   m_ObjectHideFlags: 0

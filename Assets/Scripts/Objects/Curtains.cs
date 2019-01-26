@@ -23,10 +23,16 @@ public class Curtains : InteractableObject {
     {
         Debug.Log("draw or close curtains");
         state = !state;
-        if (state)                          //state=true=open
+        if (state)
+        {                      //state=true=open
+            godRay.SetActive(false);
             animator.SetBool("CurtainOn", true);
+        }
         else
+        { 
             animator.SetBool("CurtainOn", false);
+            godRay.SetActive(true);
+        }
     }
 
     
