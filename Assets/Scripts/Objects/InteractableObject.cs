@@ -10,7 +10,7 @@ public class InteractableObject : MonoBehaviour {
 
     //public bool countPoints;
     public bool state { get; set; }
-    public bool isMovable { get; protected set; }
+    public bool isMovable;
 
     protected GameManager gameManager;
     protected GameObject currentPlayer;
@@ -24,6 +24,7 @@ public class InteractableObject : MonoBehaviour {
     virtual public void HoldInteraction() { }
     virtual public void PickUp(GameObject player)
     {
+        if (currentPlayer != null) return;
         currentPlayer = player;
         player.transform.position = transform.position;
         Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>());
