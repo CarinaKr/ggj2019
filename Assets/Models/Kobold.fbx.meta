@@ -1,22 +1,40 @@
 fileFormatVersion: 2
-guid: c23f7875278eb66448ee45d93285cfca
+guid: 5b96333a6b0e78044a9cfbb28d2cda45
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Camera
-    100002: Circle
-    100004: Lamp
-    100006: //RootNode
-    400000: Camera
-    400002: Circle
-    400004: Lamp
-    400006: //RootNode
-    2000000: Camera
-    2100000: Stehlampe_Material
-    2300000: Circle
-    3300000: Circle
-    4300000: Circle
-    10800000: Lamp
+    100000: Arms
+    100002: Body
+    100004: Hat
+    100006: Head
+    100008: //RootNode
+    100010: Legs
+    400000: Arms
+    400002: Body
+    400004: Hat
+    400006: Head
+    400008: //RootNode
+    400010: Legs
+    2100000: Arms_Material
+    2100002: Body_Material
+    2100004: Hat_Material
+    2100006: Head_Material
+    2100008: Legs_Material
+    2300000: Arms
+    2300002: Body
+    2300004: Hat
+    2300006: Head
+    2300008: Legs
+    3300000: Arms
+    3300002: Body
+    3300004: Hat
+    3300006: Head
+    3300008: Legs
+    4300000: Arms
+    4300002: Body
+    4300004: Hat
+    4300006: Head
+    4300008: Legs
   externalObjects: {}
   materials:
     importMaterials: 1
