@@ -6,15 +6,14 @@ public class InteractableObject : MonoBehaviour {
 
     public int holdTime;
     public Transform[] dropOffPoints;
+    
 
     //public bool countPoints;
     public bool state { get; set; }
+    public bool isMovable { get; protected set; }
 
     protected GameManager gameManager;
     protected GameObject currentPlayer;
-
-    virtual public void HoldInteraction() { }
-    virtual public void PickUp(GameObject player) { }
 
     protected virtual void Start()
     {
@@ -22,6 +21,16 @@ public class InteractableObject : MonoBehaviour {
         //StartCoroutine("AddPoints");
     }
 
+    virtual public void HoldInteraction() { }
+    virtual public void PickUp(GameObject player)
+    {
+        currentPlayer = player;
+        player.transform.position = transform.position;
+        //player.GetComponent<CapsuleCollider>().enabled = false;
+        Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>());
+        player.GetComponent<MeshRenderer>().enabled = false;
+        transform.SetParent(player.transform);
+    }
     virtual public void Drop(GameObject player)
     {
         foreach (Transform dropOff in dropOffPoints)

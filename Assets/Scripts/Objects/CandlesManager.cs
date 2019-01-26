@@ -38,11 +38,11 @@ public class CandlesManager : MonoBehaviour {
 
                 if (onCandles == candles.Length)
                 {
-                    GameManager.self.princessManager.points = Mathf.Min(GameManager.self.princessManager.points + GameManager.self.pointsCoboltCurtains, GameManager.self.princessManager.maxPoints);
+                    GameManager.self.princessManager.points = Mathf.Min(GameManager.self.princessManager.points + GameManager.self.pointsPrincessCandles, GameManager.self.princessManager.maxPoints);
                 }
                 else if (offCandles == candles.Length)
                 {
-                    GameManager.self.frankManager.points = Mathf.Min(GameManager.self.frankManager.points + GameManager.self.pointsVampCurtains, GameManager.self.frankManager.maxPoints);
+                    GameManager.self.frankManager.points = Mathf.Min(GameManager.self.frankManager.points + GameManager.self.pointsFrankCandels, GameManager.self.frankManager.maxPoints);
                 }
 
             }

@@ -35,8 +35,6 @@ public class PlayerManager : MonoBehaviour {
         {
             _points = value;
             pointsCircle.fillAmount = _points / maxPoints;
-            Debug.Log(gameObject+"points: " + _points);
-            Debug.Log(gameObject+"fill amount: " + pointsCircle.fillAmount);
         }
     }
 

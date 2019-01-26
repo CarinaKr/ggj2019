@@ -11,6 +11,7 @@ public class Sofa : InteractableObject {
     override protected void Start()
     {
         base.Start();
+        isMovable = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,22 +31,12 @@ public class Sofa : InteractableObject {
 
     public override void PickUp(GameObject player)
     {
-        currentPlayer = player;
-        player.transform.position = transform.position;
-        //player.GetComponent<CapsuleCollider>().enabled = false;
-        Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>());
-        player.GetComponent<MeshRenderer>().enabled = false;
-        transform.SetParent(player.transform);
+        base.PickUp(player);
     }
 
     public override void Drop(GameObject player)
     {
         base.Drop(player);
-        //if(isAtWall)
-        //{
-        //    if(!coroutinePointsRunning)
-        //        StartCoroutine("AddPoints");
-        //}
     }
 
     private IEnumerator AddPoints()

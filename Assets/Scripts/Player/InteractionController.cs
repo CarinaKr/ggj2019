@@ -13,12 +13,13 @@ public class InteractionController : MonoBehaviour {
     private bool isHolding;
     private InteractableObject isObject;
     private Rigidbody rb;
-    private List<InteractableObject> objects;
+    private List<InteractableObject> toggleObjects;
+    private InteractableObject currentMovableObject;
 
 
 	// Use this for initialization
 	void Start () {
-        objects = new List<InteractableObject>();
+        toggleObjects = new List<InteractableObject>();
         rb = GetComponent<Rigidbody>();
         holdTime = new Dictionary<InteractableObject, float>();
 	}
@@ -31,16 +32,16 @@ public class InteractionController : MonoBehaviour {
             if (!isHolding)
             {
                 isHolding = true;
-                for (int i = 0; i < objects.Count; i++)
+                for (int i = 0; i < toggleObjects.Count; i++)
                 {
-                    holdTime.Add(objects[i], objects[i].holdTime);
+                    holdTime.Add(toggleObjects[i], toggleObjects[i].holdTime);
                     holdCounter[i].enabled = true;
                 }
-                if (objects.Count == 1)
+                if (toggleObjects.Count == 1)
                 {
                     holdCounter[0].rectTransform.localPosition = new Vector3(0, 0,0);
                 }
-                else if (objects.Count == 2)
+                else if (toggleObjects.Count == 2)
                 {
                     holdCounter[0].rectTransform.localPosition = new Vector3(0 - holdCounter[0].rectTransform.sizeDelta.x / 2, 0,0);
                     holdCounter[1].rectTransform.localPosition = new Vector3(0 + holdCounter[0].rectTransform.sizeDelta.x / 2, 0,0);
@@ -76,11 +77,8 @@ public class InteractionController : MonoBehaviour {
         {
             if (!isObject)
             {
-                foreach (InteractableObject obj in objects)
-                {
-                    obj.PickUp(gameObject);
-                    isObject = obj;
-                }
+                currentMovableObject.PickUp(gameObject);
+                isObject = currentMovableObject;
             }
             else
             {
@@ -94,7 +92,8 @@ public class InteractionController : MonoBehaviour {
     {
         if(other.tag=="Object")
         {
-            objects.Add(other.GetComponent<InteractableObject>());
+            currentMovableObject = other.GetComponent<InteractableObject>();
+            //objects.Add(other.GetComponent<InteractableObject>());
             
         }
     }
@@ -103,14 +102,17 @@ public class InteractionController : MonoBehaviour {
         if(other.tag=="Object")
         {
             InteractableObject currentObject = other.GetComponent<InteractableObject>();
-            if (objects.Contains(currentObject))
+            if (toggleObjects.Contains(currentObject))
             {
-                objects.Remove(currentObject);
+                toggleObjects.Remove(currentObject);
             }
             if(holdTime.ContainsKey(currentObject))
             {
                 holdTime.Remove(currentObject);
             }
+
+            if (currentMovableObject == currentObject)
+                currentMovableObject = null;
         }
     }
 }
