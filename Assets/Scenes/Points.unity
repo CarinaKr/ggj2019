@@ -1245,7 +1245,6 @@ GameObject:
   - component: {fileID: 772980294}
   - component: {fileID: 772980293}
   - component: {fileID: 772980292}
-  - component: {fileID: 772980291}
   - component: {fileID: 772980290}
   - component: {fileID: 772980295}
   m_Layer: 0
@@ -1265,18 +1264,6 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &772980291
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 772980289}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &772980292
@@ -1294,7 +1281,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d963c9a456f2c0b45ac3e20db97a65b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1328,8 +1315,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 772980289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.29, y: 1.0507812, z: 0.6088971}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 9.474, y: 0.41, z: -4.05}
+  m_LocalScale: {x: 0.653, y: 1, z: 3.7670681}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1347,6 +1334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdTime: 3
   dropOffPoints: []
+  open: {r: 0, g: 1, b: 0.021962404, a: 1}
+  closed: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &809955331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,7 +2431,6 @@ GameObject:
   - component: {fileID: 1412434843}
   - component: {fileID: 1412434842}
   - component: {fileID: 1412434841}
-  - component: {fileID: 1412434840}
   - component: {fileID: 1412434839}
   - component: {fileID: 1412434838}
   m_Layer: 0
@@ -2465,6 +2453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdTime: 3
   dropOffPoints: []
+  open: {r: 0, g: 1, b: 0.021962404, a: 1}
+  closed: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &1412434839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2473,18 +2463,6 @@ BoxCollider:
   m_GameObject: {fileID: 1412434837}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &1412434840
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1412434837}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2504,7 +2482,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d963c9a456f2c0b45ac3e20db97a65b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2538,8 +2516,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1412434837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.29, y: 1.0507812, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -9.856, y: 0.58, z: -0.874}
+  m_LocalScale: {x: 0.508, y: 1, z: 2.56802}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9

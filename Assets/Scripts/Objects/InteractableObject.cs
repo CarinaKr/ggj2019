@@ -6,12 +6,21 @@ public class InteractableObject : MonoBehaviour {
 
     public int holdTime;
     public Transform[] dropOffPoints;
-    
+
+    public bool countPoints;
+
+    protected GameManager gameManager;
     protected GameObject currentPlayer;
-    private bool state;
+    protected bool state;
 
     virtual public void HoldInteraction() { }
     virtual public void PickUp(GameObject player) { }
+
+    protected virtual void Start()
+    {
+        gameManager = GameManager.self;
+        StartCoroutine("AddPoints");
+    }
 
     virtual public void Drop(GameObject player)
     {

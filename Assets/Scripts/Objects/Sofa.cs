@@ -7,12 +7,10 @@ public class Sofa : InteractableObject {
     
     private bool isAtWall;
     private bool coroutinePointsRunning;
-    private GameManager gameManager;
 
-    private void Start()
+    override protected void Start()
     {
-        gameManager = GameManager.self;
-        StartCoroutine("AddPoints");
+        base.Start();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,14 +50,14 @@ public class Sofa : InteractableObject {
 
     private IEnumerator AddPoints()
     {
-        while(true)
+        while(countPoints)
         {
             yield return new WaitForSeconds(1f);
             if (gameManager.isRunning)
             {
                 if (isAtWall && currentPlayer == null)
                 {
-                    GameManager.self.vampireManager.points = Mathf.Min(GameManager.self.vampireManager.points + GameManager.self.pointsVampSofa, GameManager.self.vampireManager.maxPoints);
+                    GameManager.self.frankManager.points = Mathf.Min(GameManager.self.frankManager.points + GameManager.self.pointsFrankSofa, GameManager.self.frankManager.maxPoints);
                 }
                 else if (!isAtWall && currentPlayer == null)
                 {

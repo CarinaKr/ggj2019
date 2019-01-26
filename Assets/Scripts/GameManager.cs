@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour {
     public static GameManager self;
 
     public PlayerManager vampireManager, frankManager, coboltManager, princessManager;
-    public float pointsVampSofa, pointsCoboltSofa;
+    public float pointsFrankSofa, pointsCoboltSofa;
+    public float pointsVampCurtains, pointsCoboltCurtains;
 
     public bool isRunning {get;set;}
 
