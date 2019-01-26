@@ -5,15 +5,18 @@ using UnityEngine;
 public class Curtains : InteractableObject {
 
     public Color open, closed;
+    public GameObject godRay;
 
     private Material currentMaterial;
+    private Animator animator;
 
 	// Use this for initialization
 	protected override void Start () {
         base.Start();
         isMovable = false;
-        currentMaterial = GetComponent<Renderer>().material;
-        currentMaterial.color = closed;
+        animator = GetComponent<Animator>();
+        //currentMaterial = GetComponent<Renderer>().material;
+        //currentMaterial.color = closed;
 	}
 
     public override void HoldInteraction()
@@ -21,9 +24,9 @@ public class Curtains : InteractableObject {
         Debug.Log("draw or close curtains");
         state = !state;
         if (state)                          //state=true=open
-            currentMaterial.color = open;
+            animator.SetBool("CurtainOn", true);
         else
-            currentMaterial.color = closed;
+            animator.SetBool("CurtainOn", false);
     }
 
     
