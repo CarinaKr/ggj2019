@@ -9,5 +9,5 @@ public class InteractableObject : MonoBehaviour {
     private bool state;
 
     virtual public void HoldInteraction() { }
-    virtual public void PickUp() { }
+    virtual public void PickUp(GameObject player) { }
 }

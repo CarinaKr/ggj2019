@@ -18,60 +18,60 @@ public class InteractionController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        objects = new List<InteractableObject>();
         rb = GetComponent<Rigidbody>();
         holdTime = new Dictionary<InteractableObject, float>();
-        holdInteraction = "Hold0";
-        pickUp = "PickUp0";
-    }
+	}
 	
 	// Update is called once per frame
 	void Update () {
         rb.velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        if(Input.GetButton(holdInteraction))
+        if (Input.GetButton(holdInteraction))
         {
-            if(!isHolding)
+            if (!isHolding)
             {
                 isHolding = true;
-                for(int i=0;i<objects.Count;i++)
+                for (int i = 0; i < objects.Count; i++)
                 {
                     holdTime.Add(objects[i], objects[i].holdTime);
                     holdCounter[i].enabled = true;
                 }
-                if(objects.Count==1)
+                if (objects.Count == 1)
                 {
-                    holdCounter[0].rectTransform.position = new Vector2(0, 0);
+                    //holdCounter[0].rectTransform.position = new Vector2(0, 0);
                 }
-                else if(objects.Count==2)
+                else if (objects.Count == 2)
                 {
-                    holdCounter[0].rectTransform.position = new Vector2(0-holdCounter[0].minWidth / 2, 0);
-                    holdCounter[1].rectTransform.position = new Vector2(0+holdCounter[0].minWidth / 2, 0);
+                    holdCounter[0].rectTransform.position = new Vector2(0 - holdCounter[0].minWidth / 2, 0);
+                    holdCounter[1].rectTransform.position = new Vector2(0 + holdCounter[0].minWidth / 2, 0);
                 }
             }
             else
             {
                 List<InteractableObject> obj = new List<InteractableObject>(holdTime.Keys);
-                for (int i= 0;i < obj.Count;i++)
+                for (int i = 0; i < obj.Count; i++)
                 {
                     holdTime[obj[i]] = holdTime[obj[i]] - Time.deltaTime;
                     holdCounter[i].fillAmount = obj[i].holdTime / holdTime[obj[i]];
-                    if(holdTime[obj[i]]<=0)
+                    if (holdTime[obj[i]] <= 0)
                     {
                         obj[i].HoldInteraction();
                     }
                 }
             }
         }
-        else if(Input.GetButtonUp(holdInteraction))
+        else if (Input.GetButtonUp(holdInteraction))
         {
             isHolding = false;
             holdTime.Clear();
         }
-        else if(Input.GetButtonDown(pickUp))
+        else if (Input.GetButtonDown(pickUp))
         {
             foreach(InteractableObject obj in objects)
             {
-                obj.PickUp();
+                obj.PickUp(gameObject);
+
             }
         }
 	}
@@ -81,6 +81,7 @@ public class InteractionController : MonoBehaviour {
         if(other.tag=="Object")
         {
             objects.Add(other.GetComponent<InteractableObject>());
+            
         }
     }
     private void OnTriggerExit(Collider other)
@@ -99,3 +100,5 @@ public class InteractionController : MonoBehaviour {
         }
     }
 }
+
+	}
