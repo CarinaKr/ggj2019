@@ -8,10 +8,10 @@ public class InteractableObject : MonoBehaviour {
     public Transform[] dropOffPoints;
 
     public bool countPoints;
+    public bool state { get; set; }
 
     protected GameManager gameManager;
     protected GameObject currentPlayer;
-    protected bool state;
 
     virtual public void HoldInteraction() { }
     virtual public void PickUp(GameObject player) { }
@@ -19,7 +19,7 @@ public class InteractableObject : MonoBehaviour {
     protected virtual void Start()
     {
         gameManager = GameManager.self;
-        StartCoroutine("AddPoints");
+        //StartCoroutine("AddPoints");
     }
 
     virtual public void Drop(GameObject player)
