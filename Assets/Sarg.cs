@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Regal : InteractableObject {
+public class Sarg : InteractableObject {
 
     public override void PickUp(GameObject player)
     {
