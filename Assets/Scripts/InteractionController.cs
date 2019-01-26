@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InteractionController : MonoBehaviour {
-
-    public float speed;
+    
     public string holdInteraction="Hold0";
     public string pickUp="PickUp0";
     public Image[] holdCounter;
 
     private Dictionary<InteractableObject, float> holdTime;
     private bool isHolding;
+    private InteractableObject isObject;
     private Rigidbody rb;
     private List<InteractableObject> objects;
 
@@ -67,10 +67,17 @@ public class InteractionController : MonoBehaviour {
         }
         else if (Input.GetButtonDown(pickUp))
         {
-            foreach(InteractableObject obj in objects)
+            if (!isObject)
             {
-                obj.PickUp(gameObject);
-
+                foreach (InteractableObject obj in objects)
+                {
+                    obj.PickUp(gameObject);
+                    isObject = obj;
+                }
+            }
+            else
+            {
+                isObject.Drop(gameObject);
             }
         }
 	}

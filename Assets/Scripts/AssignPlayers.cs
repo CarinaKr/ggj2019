@@ -38,14 +38,15 @@ public class AssignPlayers : MonoBehaviour {
         {
             yield return new WaitForSeconds(1f);
             cams[i].rect = new Rect(0, 0, 1, 1);
+            int playerNum = cams[i].GetComponentInParent<MovementController>().playerNum;
 
-            GamePad.SetVibration((PlayerIndex)i, 0.5f, 0.5f);   //rumble controller
-            yield return new WaitForSeconds(0.5f);
-            GamePad.SetVibration((PlayerIndex)i, 0, 0);
-            yield return new WaitForSeconds(0.5f);
-            GamePad.SetVibration((PlayerIndex)i, 0.5f, 0.5f);
-            yield return new WaitForSeconds(0.5f);
-            GamePad.SetVibration((PlayerIndex)i, 0, 0);
+            GamePad.SetVibration((PlayerIndex)playerNum, 1f, 1f);   //rumble controller
+            yield return new WaitForSeconds(0.4f);
+            GamePad.SetVibration((PlayerIndex)playerNum, 0, 0);
+            yield return new WaitForSeconds(0.1f);
+            GamePad.SetVibration((PlayerIndex)playerNum, 0.5f, 0.5f);
+            yield return new WaitForSeconds(0.4f);
+            GamePad.SetVibration((PlayerIndex)playerNum, 0, 0);
             //yield return new WaitForSeconds(3f);
             cams[i].rect = new Rect(0, 0, 0, 0);    
 
@@ -69,14 +70,14 @@ public class AssignPlayers : MonoBehaviour {
                 randNum = Random.Range(0, 4);
             }
             playerNum.Add(randNum);
-            Rigidbody rb1 = players[randNum].GetComponent<Rigidbody>();
 
-            playersMovement[i] = players[randNum].GetComponent<MovementController>();
+            playersMovement[i] = players[i].GetComponent<MovementController>();
             playersMovement[i].horizontal = "Horizontal" + randNum;
             playersMovement[i].vertical = "Vertical" + randNum;
             playersMovement[i].camera = "Camera" + randNum;
+            playersMovement[i].playerNum = randNum;
 
-            playersInteraction[i] = players[randNum].GetComponent<InteractionController>();
+            playersInteraction[i] = players[i].GetComponent<InteractionController>();
             playersInteraction[i].pickUp = "PickUp" + randNum;
             playersInteraction[i].holdInteraction = "Hold" + randNum;
         }

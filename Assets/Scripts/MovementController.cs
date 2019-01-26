@@ -7,6 +7,7 @@ public class MovementController : MonoBehaviour {
     public string horizontal, vertical, camera;
     public float speed,turnSpeed;
     public bool started { get; set; }
+    public int playerNum { get; set; }
 
     private Rigidbody rb;
     private Vector3 movement;
