@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour {
 
-    public string horizontal, vertical, camera;
+    public string horizontal, vertical, turn;
     public float speed,turnSpeed;
-    public bool started { get; set; }
-    public int playerNum { get; set; }
 
+    private GameManager gameManager;
     private Rigidbody rb;
     private Vector3 movement;
     private float verticalPush;
@@ -17,13 +16,14 @@ public class MovementController : MonoBehaviour {
 	// Use this for initializations
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        gameManager = GameManager.self;
         verticalPush = 2.4f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (!started) return;
+        if (!gameManager.isRunning) return;
         movement = new Vector3(
                 (transform.forward.x *Input.GetAxis(vertical) + transform.right.x * Input.GetAxis(horizontal)) * speed * Time.deltaTime,
                 rb.velocity.y,
@@ -31,6 +31,6 @@ public class MovementController : MonoBehaviour {
 
         rb.velocity = movement;
 
-        transform.Rotate(transform.up, Input.GetAxis(camera)* turnSpeed);
+        transform.Rotate(transform.up, Input.GetAxis(turn)* turnSpeed);
 	}
 }

@@ -7,9 +7,37 @@ public class InteractableObject : MonoBehaviour {
     public int holdTime;
     public Transform[] dropOffPoints;
     
+    protected GameObject currentPlayer;
     private bool state;
 
     virtual public void HoldInteraction() { }
     virtual public void PickUp(GameObject player) { }
-    virtual public void Drop(GameObject player) { }
+
+    virtual public void Drop(GameObject player)
+    {
+        foreach (Transform dropOff in dropOffPoints)
+        {
+            Collider[] collider = Physics.OverlapBox(dropOff.position, new Vector3(player.transform.lossyScale.x / 2, player.transform.lossyScale.y / 2, player.transform.lossyScale.z / 2), transform.rotation, 0, QueryTriggerInteraction.Ignore);
+            if (collider.Length == 0)
+            {
+                transform.SetParent(null);
+                player.transform.position = dropOff.position;
+                player.GetComponent<MeshRenderer>().enabled = true;
+                Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>(), false);
+                currentPlayer = null;
+                return;
+            }
+        }
+        Debug.Log("no free drop off space found");
+    }
+
+
+    //private void OnDrawGizmosSelected()
+    //{
+    //    if (currentPlayer == null) return;
+    //    foreach (Transform dropOff in dropOffPoints)
+    //    {
+    //        Gizmos.DrawWireCube(dropOff.position, new Vector3(currentPlayer.transform.lossyScale.x / 2, currentPlayer.transform.lossyScale.y / 2, currentPlayer.transform.lossyScale.z / 2));
+    //    }
+    //}
 }

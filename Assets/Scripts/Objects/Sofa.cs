@@ -4,7 +4,31 @@ using UnityEngine;
 
 public class Sofa : InteractableObject {
 
-    private GameObject currentPlayer;
+    
+    private bool isAtWall;
+    private bool coroutinePointsRunning;
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameManager.self;
+        StartCoroutine("AddPoints");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Footer")
+        {
+            isAtWall = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Footer")
+        {
+            isAtWall = false;
+        }
+    }
 
     public override void PickUp(GameObject player)
     {
@@ -18,27 +42,31 @@ public class Sofa : InteractableObject {
 
     public override void Drop(GameObject player)
     {
-        foreach(Transform dropOff in dropOffPoints)
-        {
-            Collider[] collider = Physics.OverlapBox(dropOff.position, new Vector3(player.transform.lossyScale.x / 2, player.transform.lossyScale.y / 2, player.transform.lossyScale.z / 2),transform.rotation,0,QueryTriggerInteraction.Ignore);
-            if(collider.Length==0)
-            {
-                transform.SetParent(null);
-                player.transform.position = dropOff.position;
-                player.GetComponent<MeshRenderer>().enabled = true;
-                Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>(),false);
-                return;
-            }
-        }
-        Debug.Log("no free drop off space found");
+        base.Drop(player);
+        //if(isAtWall)
+        //{
+        //    if(!coroutinePointsRunning)
+        //        StartCoroutine("AddPoints");
+        //}
     }
 
-    private void OnDrawGizmosSelected()
+    private IEnumerator AddPoints()
     {
-        if (currentPlayer == null) return;
-        foreach (Transform dropOff in dropOffPoints)
+        while(true)
         {
-            Gizmos.DrawWireCube(dropOff.position, new Vector3(currentPlayer.transform.lossyScale.x / 2, currentPlayer.transform.lossyScale.y / 2, currentPlayer.transform.lossyScale.z / 2));
+            yield return new WaitForSeconds(1f);
+            if (gameManager.isRunning)
+            {
+                if (isAtWall && currentPlayer == null)
+                {
+                    GameManager.self.vampireManager.points = Mathf.Min(GameManager.self.vampireManager.points + GameManager.self.pointsVampSofa, GameManager.self.vampireManager.maxPoints);
+                }
+                else if (!isAtWall && currentPlayer == null)
+                {
+                    GameManager.self.coboltManager.points = Mathf.Min(GameManager.self.coboltManager.points + GameManager.self.pointsCoboltSofa, GameManager.self.coboltManager.maxPoints);
+                }
+            }
         }
     }
+
 }
