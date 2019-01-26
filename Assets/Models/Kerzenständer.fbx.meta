@@ -1,20 +1,15 @@
 fileFormatVersion: 2
-guid: 1ff0e3700c50f914a9578d413ea710af
+guid: 49ed82ee60676924688006ea50efd73e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Kerzen_Material
+    2100000: Staender_Material
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Kerzen_Material
-    second: {fileID: 2100000, guid: 1ff0e3700c50f914a9578d413ea710af, type: 3}
+    4300000: Circle
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
