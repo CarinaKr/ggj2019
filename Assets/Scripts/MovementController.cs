@@ -25,10 +25,9 @@ public class MovementController : MonoBehaviour {
 
         if (!started) return;
         movement = new Vector3(
-                (transform.forward.x *Input.GetAxis(vertical) + transform.right.x * Input.GetAxis(horizontal)),
-                0,
-                (transform.forward.z * Input.GetAxis(vertical) + transform.right.z * Input.GetAxis(horizontal)))
-                * speed * Time.deltaTime;
+                (transform.forward.x *Input.GetAxis(vertical) + transform.right.x * Input.GetAxis(horizontal)) * speed * Time.deltaTime,
+                rb.velocity.y,
+                (transform.forward.z * Input.GetAxis(vertical) + transform.right.z * Input.GetAxis(horizontal)) * speed * Time.deltaTime);
 
         rb.velocity = movement;
 

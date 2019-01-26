@@ -43,11 +43,10 @@ public class AssignPlayers : MonoBehaviour {
             GamePad.SetVibration((PlayerIndex)playerNum, 1f, 1f);   //rumble controller
             yield return new WaitForSeconds(0.4f);
             GamePad.SetVibration((PlayerIndex)playerNum, 0, 0);
-            yield return new WaitForSeconds(0.1f);
-            GamePad.SetVibration((PlayerIndex)playerNum, 0.5f, 0.5f);
-            yield return new WaitForSeconds(0.4f);
-            GamePad.SetVibration((PlayerIndex)playerNum, 0, 0);
-            //yield return new WaitForSeconds(3f);
+            //yield return new WaitForSeconds(0.1f);
+            //GamePad.SetVibration((PlayerIndex)playerNum, 0.5f, 0.5f);
+            //yield return new WaitForSeconds(0.4f);
+            //GamePad.SetVibration((PlayerIndex)playerNum, 0, 0);
             cams[i].rect = new Rect(0, 0, 0, 0);    
 
         }

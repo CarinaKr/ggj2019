@@ -38,30 +38,37 @@ public class InteractionController : MonoBehaviour {
                 }
                 if (objects.Count == 1)
                 {
-                    //holdCounter[0].rectTransform.position = new Vector2(0, 0);
+                    holdCounter[0].rectTransform.localPosition = new Vector3(0, 0,0);
                 }
                 else if (objects.Count == 2)
                 {
-                    holdCounter[0].rectTransform.position = new Vector2(0 - holdCounter[0].minWidth / 2, 0);
-                    holdCounter[1].rectTransform.position = new Vector2(0 + holdCounter[0].minWidth / 2, 0);
+                    holdCounter[0].rectTransform.localPosition = new Vector3(0 - holdCounter[0].rectTransform.sizeDelta.x / 2, 0,0);
+                    holdCounter[1].rectTransform.localPosition = new Vector3(0 + holdCounter[0].rectTransform.sizeDelta.x / 2, 0,0);
                 }
             }
             else
             {
                 List<InteractableObject> obj = new List<InteractableObject>(holdTime.Keys);
-                for (int i = 0; i < obj.Count; i++)
+                for (int i = 0; i < holdTime.Count; i++)
                 {
                     holdTime[obj[i]] = holdTime[obj[i]] - Time.deltaTime;
-                    holdCounter[i].fillAmount = obj[i].holdTime / holdTime[obj[i]];
+                    Debug.Log("calculate fill amount: "+ holdTime[obj[i]] + " / " + (float)obj[i].holdTime);
+                    holdCounter[i].fillAmount = holdTime[obj[i]]/ (float)obj[i].holdTime;
+                    Debug.Log("fill amount: " + holdCounter[i].fillAmount);
                     if (holdTime[obj[i]] <= 0)
                     {
                         obj[i].HoldInteraction();
+                        holdTime.Remove(obj[i]);
                     }
                 }
             }
         }
         else if (Input.GetButtonUp(holdInteraction))
         {
+            foreach(Image counter in holdCounter)
+            {
+                counter.enabled = false;
+            }
             isHolding = false;
             holdTime.Clear();
         }
@@ -78,6 +85,7 @@ public class InteractionController : MonoBehaviour {
             else
             {
                 isObject.Drop(gameObject);
+                isObject = null;
             }
         }
 	}
