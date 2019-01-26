@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public float pointsPrincessCandles, pointsFrankCandels;
     public float pointsVampBed, pointsFrankBed;
     public float pointsPrincessPlants, pointsCoboltPlants;
+    public float pointsVampireMirror, pointsPrincessMirror;
 
     public bool isRunning {get;set;}
 
