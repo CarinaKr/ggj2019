@@ -66,9 +66,13 @@ GameObject:
   - component: {fileID: 4325059785631510}
   - component: {fileID: 33339353592704594}
   - component: {fileID: 23071163490071912}
+  - component: {fileID: 136311153499110976}
+  - component: {fileID: 65468326825125942}
+  - component: {fileID: 65502435623537658}
+  - component: {fileID: 114164765290944924}
   m_Layer: 0
   m_Name: LightPlant
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +125,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292769796952986}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: 0.60942, y: 0.084662005, z: -1.3474}
+  m_LocalScale: {x: 41.421272, y: 41.421272, z: 41.421272}
   m_Children:
   - {fileID: 4592972631805732}
   - {fileID: 4157168580336112}
@@ -199,3 +203,58 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292769796952986}
   m_Mesh: {fileID: 4300000, guid: fead771f97c79ab418ed3e7b6789df9f, type: 3}
+--- !u!65 &65468326825125942
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292769796952986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.006400917, y: 0.006396025, z: 0.03380493}
+  m_Center: {x: -0.000113703274, y: 0.0006410727, z: 0.01709753}
+--- !u!65 &65502435623537658
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292769796952986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014293987, y: 0.0130698895, z: 0.010108539}
+  m_Center: {x: 0.000006769895, y: 0.0001960963, z: 0.004974935}
+--- !u!114 &114164765290944924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292769796952986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23e3cd5c0417b54d960ff1820ec12f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdTime: 0
+  dropOffPoints:
+  - {fileID: 4592972631805732}
+  - {fileID: 4157168580336112}
+  - {fileID: 4226545051997748}
+  - {fileID: 4572629967101724}
+  countPoints: 0
+--- !u!136 &136311153499110976
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292769796952986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.012934647
+  m_Height: 0.037144393
+  m_Direction: 2
+  m_Center: {x: 0, y: -1.0777977e-16, z: 0.017145097}
