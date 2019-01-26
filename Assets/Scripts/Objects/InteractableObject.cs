@@ -7,7 +7,7 @@ public class InteractableObject : MonoBehaviour {
     public int holdTime;
     public Transform[] dropOffPoints;
 
-    public bool countPoints;
+    //public bool countPoints;
     public bool state { get; set; }
 
     protected GameManager gameManager;
