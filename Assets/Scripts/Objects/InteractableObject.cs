@@ -10,7 +10,7 @@ public class InteractableObject : MonoBehaviour {
 
     //public bool countPoints;
     public bool state { get; set; }
-    public bool isMovable { get; protected set; }
+    public bool isMovable;
 
     protected GameManager gameManager;
     protected GameObject currentPlayer;
