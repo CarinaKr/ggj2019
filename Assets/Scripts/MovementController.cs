@@ -6,6 +6,7 @@ public class MovementController : MonoBehaviour {
 
     public string horizontal, vertical, camera;
     public float speed,turnSpeed;
+    public bool started { get; set; }
 
     private Rigidbody rb;
     private Vector3 movement;
@@ -20,7 +21,8 @@ public class MovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+
+        if (!started) return;
         movement = new Vector3(
                 (transform.forward.x *Input.GetAxis(vertical) + transform.right.x * Input.GetAxis(horizontal)),
                 0,
