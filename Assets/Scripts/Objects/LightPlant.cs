@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantShadow : InteractableObject {
+public class LightPlant : InteractableObject {
 
     public bool countPoints;
 
@@ -14,7 +14,7 @@ public class PlantShadow : InteractableObject {
         base.Start();
         isMovable = true;
         StartCoroutine("AddPoints");
-        frameBox = new Vector3(1,1.6f,1);
+        frameBox = new Vector3(1,1.8f,1f);
     }
 
     public override void PickUp(GameObject player)
@@ -26,7 +26,7 @@ public class PlantShadow : InteractableObject {
     {
         base.Drop(player);
     }
-    
+
     private IEnumerator AddPoints()
     {
         while (countPoints)
@@ -34,25 +34,25 @@ public class PlantShadow : InteractableObject {
             yield return new WaitForSeconds(1f);
             if (gameManager.isRunning)
             {
-                bool inShadow = false;
+                bool inLight = false;
                 bool atWindow = false;
 
                 Collider[] colliders = Physics.OverlapBox(transform.position, frameBox / 2);
-                foreach(Collider col in colliders)
+                foreach (Collider col in colliders)
                 {
-                    if(col.tag=="Object")
+                    if (col.tag == "Object")
                     {
                         InteractableObject currentColliderObject = col.gameObject.GetComponent<InteractableObject>();
                         if (currentColliderObject is Curtains)
                         {
                             atWindow = true;
-                            if (!currentColliderObject.state)
-                                inShadow = true;
+                            if (currentColliderObject.state)
+                                inLight = true;
                         }
                     }
                 }
 
-                if (inShadow && atWindow && currentPlayer==null)
+                if (inLight && atWindow && currentPlayer == null)
                 {
                     GameManager.self.princessManager.points = Mathf.Min(GameManager.self.princessManager.points + GameManager.self.pointsPrincessPlants, GameManager.self.princessManager.maxPoints);
                 }
@@ -65,5 +65,4 @@ public class PlantShadow : InteractableObject {
             }
         }
     }
-
 }
