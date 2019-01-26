@@ -11,6 +11,7 @@ public class Curtains : InteractableObject {
 	// Use this for initialization
 	protected override void Start () {
         base.Start();
+        isMovable = false;
         currentMaterial = GetComponent<Renderer>().material;
         currentMaterial.color = closed;
 	}

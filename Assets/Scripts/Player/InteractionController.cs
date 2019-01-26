@@ -75,12 +75,12 @@ public class InteractionController : MonoBehaviour {
         }
         else if (Input.GetButtonDown(pickUp))
         {
-            if (!isObject)
+            if (!isObject && currentMovableObject!=null)
             {
                 currentMovableObject.PickUp(gameObject);
                 isObject = currentMovableObject;
             }
-            else
+            else if(isObject!=null)
             {
                 isObject.Drop(gameObject);
                 isObject = null;
@@ -92,7 +92,11 @@ public class InteractionController : MonoBehaviour {
     {
         if(other.tag=="Object")
         {
-            currentMovableObject = other.GetComponent<InteractableObject>();
+            InteractableObject currentObject = other.GetComponent<InteractableObject>();
+            if (currentObject.isMovable)
+                currentMovableObject = currentObject;
+            else
+                toggleObjects.Add(currentObject);
             //objects.Add(other.GetComponent<InteractableObject>());
             
         }
