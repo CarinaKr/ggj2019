@@ -11,6 +11,7 @@ public class AssignPlayers : MonoBehaviour {
 
     public GameObject[] players;
 
+    private PlayerManager[] playerManagers;
     private InteractionController[] playersInteraction;
     private MovementController[] playersMovement;
 
@@ -18,6 +19,7 @@ public class AssignPlayers : MonoBehaviour {
     void Start () {
         playersInteraction = new InteractionController[players.Length];
         playersMovement = new MovementController[players.Length];
+        playerManagers = new PlayerManager[players.Length];
         CheckForControllers();
         AssignRandomPlayers();
         StartCoroutine("HighlightPlayers");
@@ -38,7 +40,7 @@ public class AssignPlayers : MonoBehaviour {
         {
             yield return new WaitForSeconds(1f);
             cams[i].rect = new Rect(0, 0, 1, 1);
-            int playerNum = cams[i].GetComponentInParent<MovementController>().playerNum;
+            int playerNum = cams[i].GetComponentInParent<PlayerManager>().playerNum;
 
             GamePad.SetVibration((PlayerIndex)playerNum, 1f, 1f);   //rumble controller
             yield return new WaitForSeconds(0.4f);
@@ -53,8 +55,9 @@ public class AssignPlayers : MonoBehaviour {
 
         for (int i = 0; i < players.Length; i++)
         {
-            playersMovement[i].started = true;
-            cams[i].rect = oldRects[i];             //reset camera rect
+            cams[i].rect = oldRects[i];                      //reset camera rect
+            GameManager.self.isRunning = true;
+            playerManagers[i].StartCoroutine("LosePoints");
         }
     }
 
@@ -73,8 +76,10 @@ public class AssignPlayers : MonoBehaviour {
             playersMovement[i] = players[i].GetComponent<MovementController>();
             playersMovement[i].horizontal = "Horizontal" + randNum;
             playersMovement[i].vertical = "Vertical" + randNum;
-            playersMovement[i].camera = "Camera" + randNum;
-            playersMovement[i].playerNum = randNum;
+            playersMovement[i].turn = "Camera" + randNum;
+
+            playerManagers[i] = players[i].GetComponent<PlayerManager>();
+            playerManagers[i].playerNum = randNum;
 
             playersInteraction[i] = players[i].GetComponent<InteractionController>();
             playersInteraction[i].pickUp = "PickUp" + randNum;
