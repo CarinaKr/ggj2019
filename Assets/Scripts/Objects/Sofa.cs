@@ -38,11 +38,6 @@ public class Sofa : InteractableObject {
     {
         base.Drop(player);
     }
-
-    private IEnumerator AddPoints()
-    {
-        yield return null;
-    }
     
 
 }
