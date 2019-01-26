@@ -24,6 +24,7 @@ public class InteractableObject : MonoBehaviour {
     virtual public void HoldInteraction() { }
     virtual public void PickUp(GameObject player)
     {
+        if (currentPlayer != null) return;
         currentPlayer = player;
         player.transform.position = transform.position;
         Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>());

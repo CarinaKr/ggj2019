@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Candle : InteractableObject {
 
-    private GameObject candleLight;
+    public GameObject candleLight;
 
     override protected void Start()
     {
         base.Start();
-        candleLight = transform.GetChild(0).gameObject;
+        //candleLight = transform.GetChild(0).gameObject;
         if (state)
             candleLight.SetActive(true);
         else if (!state)

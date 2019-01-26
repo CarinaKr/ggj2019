@@ -951,6 +951,10 @@ Prefab:
       propertyPath: m_Name
       value: "Kerzenst\xE4nder (1)"
       objectReference: {fileID: 0}
+    - target: {fileID: 1394993779333086, guid: 05c71a82cc0422f45ab281f4a17ade67, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05c71a82cc0422f45ab281f4a17ade67, type: 2}
   m_IsPrefabAsset: 0
@@ -3749,23 +3753,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e58031408b72064abd8742663d51299, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1886719834 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1091944711432950, guid: 05c71a82cc0422f45ab281f4a17ade67,
-    type: 2}
-  m_PrefabInternal: {fileID: 1940169357}
---- !u!65 &1886719835
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1886719834}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.020000005, z: 0.13345316}
-  m_Center: {x: -0.000000059604645, y: -0.000000059604645, z: 0.06672657}
 --- !u!114 &1934057430 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114874790239391164, guid: cb3850b720fe1d247b9cd03563eaa9ee,
@@ -3809,6 +3796,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4108965946446000, guid: 05c71a82cc0422f45ab281f4a17ade67, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394993779333086, guid: 05c71a82cc0422f45ab281f4a17ade67, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
