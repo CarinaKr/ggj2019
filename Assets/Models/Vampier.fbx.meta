@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 95ca1b0c0fff0b240a60a94e6bb362f1
-=======
-guid: 8db2c679333b8a34391628a77b5bdb4b
->>>>>>> 744e8be559cf11a870d078eb4f70e38bd8c582c3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -1084,12 +1080,8 @@ ModelImporter:
     4300148: Sphere
     4300150: Arms
     4300152: Legs
-<<<<<<< HEAD
-    7400000: rig|rigAction
-=======
     7400000: rig|idle
     7400002: rig|running
->>>>>>> 744e8be559cf11a870d078eb4f70e38bd8c582c3
     9500000: //RootNode
     13700000: Arms
     13700002: Legs
@@ -1123,67 +1115,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-<<<<<<< HEAD
     clipAnimations: []
-=======
-    clipAnimations:
-    - serializedVersion: 16
-      name: rig|idle
-      takeName: rig|idle
-      firstFrame: 0
-      lastFrame: 22
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: rig|running
-      takeName: rig|running
-      firstFrame: 0
-      lastFrame: 16
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
->>>>>>> 744e8be559cf11a870d078eb4f70e38bd8c582c3
     isReadable: 1
   meshes:
     lODScreenPercentages: []
