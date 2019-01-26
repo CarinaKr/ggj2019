@@ -16,7 +16,7 @@ public class AssignPlayers : MonoBehaviour {
     private MovementController[] playersMovement;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         playersInteraction = new InteractionController[players.Length];
         playersMovement = new MovementController[players.Length];
         playerManagers = new PlayerManager[players.Length];
@@ -81,6 +81,7 @@ public class AssignPlayers : MonoBehaviour {
 
             playerManagers[i] = players[i].GetComponent<PlayerManager>();
             playerManagers[i].playerNum = randNum;
+            playerManagers[i].manual = "manual" + randNum;
 
             playersInteraction[i] = players[i].GetComponent<InteractionController>();
             playersInteraction[i].pickUp = "PickUp" + randNum;
