@@ -26,9 +26,8 @@ public class InteractableObject : MonoBehaviour {
     {
         currentPlayer = player;
         player.transform.position = transform.position;
-        //player.GetComponent<CapsuleCollider>().enabled = false;
         Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>());
-        player.GetComponent<MeshRenderer>().enabled = false;
+        player.transform.GetChild(0).gameObject.SetActive(false);
         transform.SetParent(player.transform);
     }
     virtual public void Drop(GameObject player)
@@ -40,7 +39,7 @@ public class InteractableObject : MonoBehaviour {
             {
                 transform.SetParent(null);
                 player.transform.position = dropOff.position;
-                player.GetComponent<MeshRenderer>().enabled = true;
+                player.transform.GetChild(0).gameObject.SetActive(true);
                 Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>(), false);
                 currentPlayer = null;
                 return;
