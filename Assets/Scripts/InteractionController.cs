@@ -25,7 +25,6 @@ public class InteractionController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         if (Input.GetButton(holdInteraction))
         {
