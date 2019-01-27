@@ -6,15 +6,21 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager self;
 
     public float timeGame;
     [Tooltip("order: VAMP, PRINCESS, FRANK, COBOLT")]
-    public Sprite[] winnerSprites;
+    public Transform[] characters;
 
     private Image gameOverImage;
     private Text winnerText;
     private int currentLevel=0;
-    private float[] finalPoints;
+    private List<PlayerManager> finalPointsChar;
+
+    private Transform[] podestPositions;
+    private PlayerManager first, second, third, forth;
+    private winner firstWinner, secondWinner, thirdWinner, forthWinner;
+
     private enum winner
     {
         VAMP,
@@ -22,7 +28,20 @@ public class LevelManager : MonoBehaviour
         FRANK,
         PRINCESS
     }
-    private winner isWinner;
+
+    private void Awake()
+    {
+        if (!self)
+        {
+            self = this;
+        }
+        if (self != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Update is called once per frame
     void Update()
@@ -44,21 +63,33 @@ public class LevelManager : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         currentLevel = level;
-        if (level == 1)
+        if (level == 2)
         {
             StartCoroutine("RunGameLevel");
         }
-        else if(level==2)
+        else if(level==3)
         {
-            winnerText = GameObject.Find("WinnerText").GetComponent<Text>();
-            if (isWinner == winner.VAMP)
-                winnerText.text = "The Vampire won!";
-            else if (isWinner == winner.PRINCESS)
-                winnerText.text = "The Princess won!";
-            else if (isWinner == winner.FRANK)
-                winnerText.text = "Frankenstein won!";
-            else if (isWinner == winner.COBOLT)
-                winnerText.text = "The Cobolt won!";
+            ////winnerText = GameObject.Find("WinnerText").GetComponent<Text>();
+            //if (isWinner == winner.VAMP)
+            //    winnerText.text = "The Vampire won!";
+            //else if (isWinner == winner.PRINCESS)
+            //    winnerText.text = "The Princess won!";
+            //else if (isWinner == winner.FRANK)
+            //    winnerText.text = "Frankenstein won!";
+            //else if (isWinner == winner.COBOLT)
+            //    winnerText.text = "The Cobolt won!";
+            podestPositions = new Transform[4];
+            podestPositions[0] = GameObject.Find("firstPosition").transform;
+            podestPositions[1] = GameObject.Find("secondPosition").transform;
+            podestPositions[2] = GameObject.Find("thirdPosition").transform;
+            podestPositions[3] = GameObject.Find("forthPosition").transform;
+            characters[0] = GameObject.Find("Vampir").transform;
+            characters[1] = GameObject.Find("Princess").transform;
+            characters[2] = GameObject.Find("Frankenstein").transform;
+            characters[3] = GameObject.Find("Kobold").transform;
+            
+            
+
         }
     }
 
@@ -75,23 +106,92 @@ public class LevelManager : MonoBehaviour
 
     private void DetermineWinner()
     {
-        finalPoints = new float[4];
-        finalPoints[0] = GameManager.self.vampireManager.points;
-        finalPoints[1] = GameManager.self.frankManager.points;
-        finalPoints[2] = GameManager.self.coboltManager.points;
-        finalPoints[3] = GameManager.self.princessManager.points;
+        finalPointsChar = new List<PlayerManager>();
+        finalPointsChar.Add(GameManager.self.vampireManager);
+        finalPointsChar.Add(GameManager.self.frankManager);
+        finalPointsChar.Add(GameManager.self.coboltManager);
+        finalPointsChar.Add( GameManager.self.princessManager);
 
-        float minPoints = Mathf.Min(finalPoints[0], Mathf.Min(finalPoints[1], Mathf.Min(finalPoints[2], finalPoints[3])));
+        //float minPoints = Mathf.Min(finalPointsChar[0], Mathf.Min(finalPointsChar[1], Mathf.Min(finalPointsChar[2], finalPointsChar[3])));
 
-        if (minPoints == GameManager.self.vampireManager.points)
-            isWinner = winner.VAMP;
-        else if (minPoints == GameManager.self.frankManager.points)
-            isWinner = winner.FRANK;
-        else if (minPoints == GameManager.self.coboltManager.points)
-            isWinner = winner.COBOLT;
-        else if (minPoints == GameManager.self.princessManager.points)
-            isWinner = winner.PRINCESS;
+        //first
+        float minPoints = finalPointsChar[0].points;
+        first = finalPointsChar[0];
+        for (int i=0;i<finalPointsChar.Count;i++)
+        {
+            if (minPoints <= finalPointsChar[i].points)
+            {
+                minPoints = finalPointsChar[i].points;
+                first = finalPointsChar[i];
+            }
+        }
+        finalPointsChar.Remove(first);
 
-        SceneManager.LoadScene(2);
+        //second
+        minPoints = finalPointsChar[0].points;
+        second = finalPointsChar[0];
+        for (int i = 0; i < finalPointsChar.Count; i++)
+        {
+            if (minPoints <= finalPointsChar[i].points)
+            {
+                minPoints = finalPointsChar[i].points;
+                second = finalPointsChar[i];
+            }
+        }
+        finalPointsChar.Remove(second);
+
+        //third
+        minPoints = finalPointsChar[0].points;
+        third = finalPointsChar[0];
+        for (int i = 0; i < finalPointsChar.Count; i++)
+        {
+            if (minPoints <= finalPointsChar[i].points)
+            {
+                minPoints = finalPointsChar[i].points;
+                third = finalPointsChar[i];
+            }
+        }
+        finalPointsChar.Remove(third);
+
+        //forth
+        forth = finalPointsChar[0];
+
+        if (first == GameManager.self.vampireManager)
+            first = winner.VAMP;//characters[0].position = podestPositions[0].position;
+        else if (first == GameManager.self.princessManager)
+            characters[1].position = podestPositions[0].position;
+        else if (first == GameManager.self.frankManager)
+            characters[2].position = podestPositions[0].position;
+        else if (first == GameManager.self.vampireManager)
+            characters[3].position = podestPositions[0].position;
+
+        if (second == GameManager.self.vampireManager)
+            characters[0].position = podestPositions[1].position;
+        else if (second == GameManager.self.princessManager)
+            characters[1].position = podestPositions[1].position;
+        else if (second == GameManager.self.frankManager)
+            characters[2].position = podestPositions[1].position;
+        else if (second == GameManager.self.vampireManager)
+            characters[3].position = podestPositions[1].position;
+
+        if (third == GameManager.self.vampireManager)
+            characters[0].position = podestPositions[2].position;
+        else if (third == GameManager.self.princessManager)
+            characters[1].position = podestPositions[2].position;
+        else if (third == GameManager.self.frankManager)
+            characters[2].position = podestPositions[2].position;
+        else if (third == GameManager.self.vampireManager)
+            characters[3].position = podestPositions[2].position;
+
+        if (forth == GameManager.self.vampireManager)
+            characters[0].position = podestPositions[3].position;
+        else if (forth == GameManager.self.princessManager)
+            characters[1].position = podestPositions[3].position;
+        else if (forth == GameManager.self.frankManager)
+            characters[2].position = podestPositions[3].position;
+        else if (forth == GameManager.self.vampireManager)
+            characters[3].position = podestPositions[3].position;
+
+        SceneManager.LoadScene(3);
     }
 }
