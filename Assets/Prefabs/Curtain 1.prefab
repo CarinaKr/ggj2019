@@ -1993,8 +1993,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1976335, y: 11.299534, z: 1.0984483}
-  m_Center: {x: -1.3625549, y: -7.153324, z: 0.04922414}
+  m_Size: {x: 4.2568383, y: 11.299534, z: 1.0984483}
+  m_Center: {x: -2.3921573, y: -7.153324, z: 0.04922414}
 --- !u!95 &95420426362589726
 Animator:
   serializedVersion: 3
@@ -2024,7 +2024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0d3de04505979429dda7fdbe70c866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdTime: 3
+  holdTime: 0
   dropOffPoints: []
   isMovable: 0
   open: {r: 0, g: 1, b: 0.021962404, a: 1}
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0d3de04505979429dda7fdbe70c866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdTime: 1
+  holdTime: 0
   dropOffPoints: []
   isMovable: 0
   open: {r: 0, g: 0, b: 0, a: 0}

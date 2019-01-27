@@ -58,7 +58,7 @@ public class Coffin : InteractableObject {
                 {
                     GameManager.self.vampireManager.points = Mathf.Min(GameManager.self.vampireManager.points + GameManager.self.pointsVampBed, GameManager.self.vampireManager.maxPoints);
                 }
-
+                
             }
         }
     }

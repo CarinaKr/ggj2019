@@ -2925,6 +2925,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 65508372457645202, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 4.2568383
+      objectReference: {fileID: 0}
+    - target: {fileID: 65508372457645202, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Center.x
+      value: -2.3921573
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d0c5d2195828749bbdd63ceeb009b9, type: 2}
   m_IsPrefabAsset: 0
@@ -3343,7 +3353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0d3de04505979429dda7fdbe70c866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdTime: 3
+  holdTime: 0
   dropOffPoints: []
   isMovable: 0
   open: {r: 0, g: 1, b: 0.021962404, a: 1}
