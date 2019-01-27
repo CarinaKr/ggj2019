@@ -1,15 +1,31 @@
 fileFormatVersion: 2
-guid: fead771f97c79ab418ed3e7b6789df9f
+guid: d824438ac4f82c8488a3a40d1f10ba79
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: BilderrahmenKlein
+    100004: Lamp
+    100006: Plane
+    100008: Standfuss
     400000: //RootNode
-    2100000: No Name
-    2100002: BlumemAT
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Circle
+    400002: BilderrahmenKlein
+    400004: Lamp
+    400006: Plane
+    400008: Standfuss
+    2100000: Fuss_Material
+    2100002: Motiv_Material
+    2100004: Rahmen_Material
+    2300000: BilderrahmenKlein
+    2300002: Plane
+    2300004: Standfuss
+    3300000: BilderrahmenKlein
+    3300002: Plane
+    3300004: Standfuss
+    4300000: Standfuss
+    4300002: Plane
+    4300004: BilderrahmenKlein
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1

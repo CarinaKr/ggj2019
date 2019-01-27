@@ -1,15 +1,28 @@
 fileFormatVersion: 2
-guid: fead771f97c79ab418ed3e7b6789df9f
+guid: e45701ff7f46dea439166d69764d9adf
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Cube
+    100006: Lamp
+    100008: Plane
     400000: //RootNode
-    2100000: No Name
-    2100002: BlumemAT
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Circle
+    400002: Camera
+    400004: Cube
+    400006: Lamp
+    400008: Plane
+    2000000: Camera
+    2100000: Bild
+    2100002: Rahmen_Material
+    2300000: Cube
+    2300002: Plane
+    3300000: Cube
+    3300002: Plane
+    4300000: Plane
+    4300002: Cube
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
