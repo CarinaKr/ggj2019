@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour
         GameManager.self.isRunning = false;
         DetermineWinner();
     }
-
+    /*
     private void DetermineWinner()
     {
         finalPointsChar = new List<PlayerManager>();
@@ -197,4 +197,5 @@ public class LevelManager : MonoBehaviour
 
         SceneManager.LoadScene(3);
     }
+    */
 }
