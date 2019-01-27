@@ -55358,9 +55358,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 2
+  m_Height: 1.4456187
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.7228094, z: 0}
 --- !u!136 &136784998967851324
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -55371,9 +55371,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 2
+  m_Height: 1.5938095
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.79690474, z: -0}
 --- !u!136 &136812218235117156
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -55383,10 +55383,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 2
+  m_Radius: 0.30000004
+  m_Height: 1.7166203
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.85831016, z: 0}
 --- !u!136 &136870812993979762
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -55397,9 +55397,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 2
+  m_Height: 1.5858415
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.79292077, z: -0}
 --- !u!137 &137070847269073696
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
