@@ -26,8 +26,8 @@ public class InteractionController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (Input.GetButton(holdInteraction))
+        
+        if (Input.GetButton(holdInteraction) && isObject == null)
         {
             if (!isHolding)
             {
@@ -64,6 +64,14 @@ public class InteractionController : MonoBehaviour {
                     {
                         obj[i].HoldInteraction();
                         holdTime.Remove(obj[i]);
+                        foreach (Image counter in holdCounter)
+                        {
+                            counter.enabled = false;
+                        }
+                        foreach (Image counter in holdCounterBackground)
+                        {
+                            counter.enabled = false;
+                        }
                     }
                 }
             }
