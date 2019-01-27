@@ -396,7 +396,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1470071767655528}
-  m_Mesh: {fileID: 4300000, guid: 632e8c7994f32724387d09654c836e48, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 51c06f1e492aed742b4d34d9d1c8b5ff, type: 3}
 --- !u!33 &33386905988451664
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -473,6 +473,7 @@ MonoBehaviour:
   holdTime: 1
   dropOffPoints: []
   particleEffect: {fileID: 0}
+  state: 1
   isMovable: 0
   inOrder: 1
   countPoints: 1
@@ -496,6 +497,7 @@ MonoBehaviour:
   - {fileID: 4600414496295150}
   - {fileID: 4688107152457650}
   particleEffect: {fileID: 0}
+  state: 0
   isMovable: 1
 --- !u!198 &198915571041021794
 ParticleSystem:

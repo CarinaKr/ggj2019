@@ -409,7 +409,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1306797274184986}
-  m_Mesh: {fileID: 4300000, guid: b7d50628bf50d514ba9bdd6d38603530, type: 3}
+  m_Mesh: {fileID: 4300000, guid: fb5150df22a63834a806b78e99f6ae8d, type: 3}
 --- !u!65 &65378060678884968
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -464,6 +464,7 @@ MonoBehaviour:
   - {fileID: 4864688877722998}
   - {fileID: 4193988239102516}
   particleEffect: {fileID: 0}
+  state: 0
   isMovable: 1
 --- !u!114 &114039794472287594
 MonoBehaviour:
@@ -479,6 +480,7 @@ MonoBehaviour:
   holdTime: 1
   dropOffPoints: []
   particleEffect: {fileID: 0}
+  state: 0
   isMovable: 0
   inOrder: 1
   countPoints: 1
