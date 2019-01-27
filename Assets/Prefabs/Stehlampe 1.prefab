@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108682451677662}
   - component: {fileID: 114987725456609940}
+  - component: {fileID: 136729898399179500}
   m_Layer: 0
   m_Name: Stehlampe 1
   m_TagString: Untagged
@@ -345,7 +346,21 @@ MonoBehaviour:
   - {fileID: 4150431975712796}
   - {fileID: 4328015933835530}
   particleEffect: {fileID: 0}
+  state: 0
   isMovable: 1
+--- !u!136 &136729898399179500
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230532574770324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!198 &198310895858414038
 ParticleSystem:
   m_ObjectHideFlags: 1
