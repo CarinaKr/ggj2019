@@ -3556,6 +3556,18 @@ Prefab:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4470224369142302, guid: 052dae535ac850e47a40d230fe50b96a, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674018072600746, guid: 052dae535ac850e47a40d230fe50b96a, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653885255665022, guid: 052dae535ac850e47a40d230fe50b96a, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 052dae535ac850e47a40d230fe50b96a, type: 2}
   m_IsPrefabAsset: 0
@@ -10294,20 +10306,20 @@ MonoBehaviour:
   frankManager: {fileID: 201904115}
   coboltManager: {fileID: 1574801499}
   princessManager: {fileID: 475032949}
-  pointsFrankSofa: 0
+  pointsFrankSofa: 1
   pointsCoboltSofa: 1
-  pointsVampCurtains: 0
-  pointsCoboltCurtains: 0
-  pointsPrincessCandles: 0
-  pointsFrankCandels: 0
-  pointsVampBed: 0
-  pointsFrankBed: 0
-  pointsPrincessPlants: 0
-  pointsCoboltPlants: 0
-  pointsVampireMirror: 0
-  pointsPrincessMirror: 0
-  pointsBlanketOrderly: 0
-  pointsBlanketUnorderly: 0
+  pointsVampCurtains: 1
+  pointsCoboltCurtains: 1
+  pointsPrincessCandles: 1
+  pointsFrankCandels: 1
+  pointsVampBed: 1
+  pointsFrankBed: 1
+  pointsPrincessPlants: 1
+  pointsCoboltPlants: 1
+  pointsVampireMirror: 1
+  pointsPrincessMirror: 1
+  pointsBlanketOrderly: 1
+  pointsBlanketUnorderly: 1
 --- !u!114 &1956149447
 MonoBehaviour:
   m_ObjectHideFlags: 0
