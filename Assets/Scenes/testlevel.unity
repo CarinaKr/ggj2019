@@ -14534,6 +14534,11 @@ Prefab:
       propertyPath: state
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114726653289735820, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d0c5d2195828749bbdd63ceeb009b9, type: 2}
   m_IsPrefabAsset: 0
@@ -15217,6 +15222,11 @@ Prefab:
         type: 2}
       propertyPath: holdTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726653289735820, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d0c5d2195828749bbdd63ceeb009b9, type: 2}
@@ -16098,6 +16108,11 @@ Prefab:
         type: 2}
       propertyPath: state
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726653289735820, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d0c5d2195828749bbdd63ceeb009b9, type: 2}
@@ -22139,15 +22154,10 @@ Prefab:
       propertyPath: m_Name
       value: Curtain (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 114348090578497674, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+    - target: {fileID: 114726653289735820, guid: d9d0c5d2195828749bbdd63ceeb009b9,
         type: 2}
-      propertyPath: holdTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114348090578497674, guid: d9d0c5d2195828749bbdd63ceeb009b9,
-        type: 2}
-      propertyPath: state
-      value: 1
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d0c5d2195828749bbdd63ceeb009b9, type: 2}
@@ -42321,6 +42331,11 @@ Prefab:
       propertyPath: holdTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114726653289735820, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d0c5d2195828749bbdd63ceeb009b9, type: 2}
   m_IsPrefabAsset: 0
@@ -42394,6 +42409,11 @@ Prefab:
         type: 2}
       propertyPath: holdTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726653289735820, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d0c5d2195828749bbdd63ceeb009b9, type: 2}
@@ -42517,6 +42537,11 @@ Prefab:
     - target: {fileID: 114348090578497674, guid: d9d0c5d2195828749bbdd63ceeb009b9,
         type: 2}
       propertyPath: state
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726653289735820, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -61158,6 +61183,11 @@ Prefab:
         type: 2}
       propertyPath: state
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726653289735820, guid: d9d0c5d2195828749bbdd63ceeb009b9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d0c5d2195828749bbdd63ceeb009b9, type: 2}

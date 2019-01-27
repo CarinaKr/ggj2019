@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172b0391fc53cf7439c4c3879eefd7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeGame: 3
+  timeGame: 10
   characters:
   - {fileID: 0}
   - {fileID: 0}
