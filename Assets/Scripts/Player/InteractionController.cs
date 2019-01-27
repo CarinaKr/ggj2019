@@ -93,6 +93,7 @@ public class InteractionController : MonoBehaviour {
         {
             if (!isObject && currentMovableObject!=null)
             {
+                toggleObjects.Clear();
                 currentMovableObject.PickUp(gameObject);
                 isObject = currentMovableObject;
             }
@@ -106,7 +107,7 @@ public class InteractionController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="Object")
+        if(other.tag=="Object" && isObject==null)
         {
             InteractableObject currentObject = other.GetComponent<InteractableObject>();
             if (currentObject.isMovable)
