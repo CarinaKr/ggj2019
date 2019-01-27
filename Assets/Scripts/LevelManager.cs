@@ -84,11 +84,14 @@ public class LevelManager : MonoBehaviour
             podestPositions[2] = GameObject.Find("thirdPosition").transform;
             podestPositions[3] = GameObject.Find("forthPosition").transform;
             characters[0] = GameObject.Find("Vampir").transform;
-            characters[1] = GameObject.Find("Princess").transform;
+            characters[1] = GameObject.Find("Kobold").transform;
             characters[2] = GameObject.Find("Frankenstein").transform;
-            characters[3] = GameObject.Find("Kobold").transform;
-            
-            
+            characters[3] = GameObject.Find("Princess").transform;
+
+            characters[(int)firstWinner].position = podestPositions[0].position;
+            characters[(int)secondWinner].position = podestPositions[1].position;
+            characters[(int)thirdWinner].position = podestPositions[2].position;
+            characters[(int)forthWinner].position = podestPositions[3].position;
 
         }
     }
@@ -157,40 +160,40 @@ public class LevelManager : MonoBehaviour
         forth = finalPointsChar[0];
 
         if (first == GameManager.self.vampireManager)
-            first = winner.VAMP;//characters[0].position = podestPositions[0].position;
+            firstWinner = winner.VAMP;//characters[0].position = podestPositions[0].position;
         else if (first == GameManager.self.princessManager)
-            characters[1].position = podestPositions[0].position;
+            firstWinner = winner.PRINCESS;//characters[1].position = podestPositions[0].position;
         else if (first == GameManager.self.frankManager)
-            characters[2].position = podestPositions[0].position;
-        else if (first == GameManager.self.vampireManager)
-            characters[3].position = podestPositions[0].position;
+            firstWinner = winner.FRANK;//characters[2].position = podestPositions[0].position;
+        else if (first == GameManager.self.coboltManager)
+            firstWinner = winner.COBOLT;//characters[3].position = podestPositions[0].position;
 
         if (second == GameManager.self.vampireManager)
-            characters[0].position = podestPositions[1].position;
+            secondWinner = winner.VAMP;//coboltManagercharacters[0].position = podestPositions[1].position;
         else if (second == GameManager.self.princessManager)
-            characters[1].position = podestPositions[1].position;
+            secondWinner = winner.PRINCESS;//characters[1].position = podestPositions[1].position;
         else if (second == GameManager.self.frankManager)
-            characters[2].position = podestPositions[1].position;
-        else if (second == GameManager.self.vampireManager)
-            characters[3].position = podestPositions[1].position;
+            secondWinner = winner.FRANK;//characters[2].position = podestPositions[1].position;
+        else if (second == GameManager.self.coboltManager)
+            secondWinner = winner.COBOLT;//characters[3].position = podestPositions[1].position;
 
         if (third == GameManager.self.vampireManager)
-            characters[0].position = podestPositions[2].position;
+            thirdWinner = winner.VAMP;//characters[0].position = podestPositions[2].position;
         else if (third == GameManager.self.princessManager)
-            characters[1].position = podestPositions[2].position;
+            thirdWinner = winner.PRINCESS;//characters[1].position = podestPositions[2].position;
         else if (third == GameManager.self.frankManager)
-            characters[2].position = podestPositions[2].position;
-        else if (third == GameManager.self.vampireManager)
-            characters[3].position = podestPositions[2].position;
+            thirdWinner = winner.FRANK;//characters[2].position = podestPositions[2].position;
+        else if (third == GameManager.self.coboltManager)
+            thirdWinner = winner.COBOLT;//characters[3].position = podestPositions[2].position;
 
         if (forth == GameManager.self.vampireManager)
-            characters[0].position = podestPositions[3].position;
+            forthWinner = winner.VAMP;//characters[0].position = podestPositions[3].position;
         else if (forth == GameManager.self.princessManager)
-            characters[1].position = podestPositions[3].position;
+            forthWinner = winner.PRINCESS;//characters[1].position = podestPositions[3].position;
         else if (forth == GameManager.self.frankManager)
-            characters[2].position = podestPositions[3].position;
-        else if (forth == GameManager.self.vampireManager)
-            characters[3].position = podestPositions[3].position;
+            forthWinner = winner.FRANK;//characters[2].position = podestPositions[3].position;
+        else if (forth == GameManager.self.coboltManager)
+            forthWinner = winner.COBOLT;//characters[3].position = podestPositions[3].position;
 
         SceneManager.LoadScene(3);
     }

@@ -314,11 +314,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114601308013885482, guid: ab9bcac7a1613fc40920ccb768de069c,
-        type: 2}
-      propertyPath: timeGame
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab9bcac7a1613fc40920ccb768de069c, type: 2}
   m_IsPrefabAsset: 0
