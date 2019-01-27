@@ -14,26 +14,41 @@ public class Curtains : InteractableObject {
 	protected override void Start () {
         base.Start();
         isMovable = false;
-        animator = GetComponent<Animator>();
-        //currentMaterial = GetComponent<Renderer>().material;
-        //currentMaterial.color = closed;
+        animator = GetComponentInChildren<Animator>();
+        StartCoroutine("ToggleCurtains", state);
 	}
 
     public override void HoldInteraction()
     {
         Debug.Log("draw or close curtains");
         state = !state;
-        if (state)
-        {                      //state=true=open
-            godRay.SetActive(false);
-            animator.SetBool("CurtainOn", true);
-        }
-        else
-        { 
-            animator.SetBool("CurtainOn", false);
-            godRay.SetActive(true);
-        }
+        //if (state)
+        //{                      //state=true=open
+        //    godRay.SetActive(false);
+        //    animator.SetBool("CurtainOn", true);
+        //}
+        //else
+        //{ 
+        //    animator.SetBool("CurtainOn", false);
+        //    godRay.SetActive(true);
+        //}
+        StartCoroutine("ToggleCurtains",state);
     }
 
-    
+    private IEnumerator ToggleCurtains(bool open)
+    {
+        if(open)
+        {
+            animator.SetBool("CurtainOn", !open);
+            yield return new WaitForSeconds(0.5f);
+            godRay.SetActive(open);
+        }
+        else
+        {
+            animator.SetBool("CurtainOn", !open);
+            yield return new WaitForSeconds(0.5f);
+            godRay.SetActive(open);
+        }
+        
+    }
 }
