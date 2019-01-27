@@ -36,9 +36,9 @@ public class AssignPlayers : MonoBehaviour {
             cams[i].rect = new Rect(0, 0, 0, 0);
         }
 
+        yield return new WaitForSeconds(1f);
         for (int i=0;i<players.Length;i++)
         {
-            yield return new WaitForSeconds(1f);
             cams[i].rect = new Rect(0, 0, 1, 1);
             PlayerManager manager = cams[i].GetComponentInParent<PlayerManager>();
             int playerNum = cams[i].GetComponentInParent<PlayerManager>().playerNum;
@@ -51,6 +51,7 @@ public class AssignPlayers : MonoBehaviour {
             //yield return new WaitForSeconds(0.4f);
             //GamePad.SetVibration((PlayerIndex)playerNum, 0, 0);
             cams[i].rect = new Rect(0, 0, 0, 0);    
+            yield return new WaitForSeconds(0.75f);
 
         }
 

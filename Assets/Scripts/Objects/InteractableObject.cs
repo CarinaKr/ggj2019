@@ -6,6 +6,7 @@ public class InteractableObject : MonoBehaviour {
     
     public int holdTime;
     public Transform[] dropOffPoints;
+    public ParticleSystem particleEffect;
     
 
     //public bool countPoints;
@@ -19,6 +20,7 @@ public class InteractableObject : MonoBehaviour {
     {
         gameManager = GameManager.self;
         //StartCoroutine("AddPoints");
+        particleEffect = GetComponentInChildren<ParticleSystem>(true);
     }
 
     virtual public void HoldInteraction() { }
@@ -26,6 +28,9 @@ public class InteractableObject : MonoBehaviour {
     {
         if (currentPlayer != null) return;
         currentPlayer = player;
+        ParticleSystem.MainModule main = particleEffect.main;
+        main.startColor = currentPlayer.GetComponent<PlayerManager>().color;
+        particleEffect.gameObject.SetActive(true);
         player.transform.position = transform.position;
         Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>());
         player.transform.GetChild(0).gameObject.SetActive(false);
@@ -43,6 +48,7 @@ public class InteractableObject : MonoBehaviour {
                 player.transform.GetChild(0).gameObject.SetActive(true);
                 Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>(), false);
                 currentPlayer = null;
+                particleEffect.gameObject.SetActive(false);
                 return;
             }
         }

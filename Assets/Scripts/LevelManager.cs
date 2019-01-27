@@ -31,9 +31,9 @@ public class LevelManager : MonoBehaviour
         {
             if (currentLevel == 0)
                 SceneManager.LoadScene(1);
-            //else if (currentLevel == 1)
-            //    SceneManager.LoadScene(2);
-            else if (currentLevel == 2)
+            else if (currentLevel == 1)
+                SceneManager.LoadScene(2);
+            else if (currentLevel == 3)
             {
                 SceneManager.LoadScene(0);
                 Destroy(GameManager.self.gameObject);

@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour {
     public int maxPoints;
     public float pointsDeductionPerSecond;
     public GameObject manualImage;
+    public Color color;
 
     public Image pointsCircle;
 

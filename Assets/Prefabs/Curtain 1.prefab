@@ -1223,14 +1223,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1232477558574924}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -10.23, y: 6.082462, z: -9.698107}
-  m_LocalScale: {x: 0.53525025, y: 0.5, z: 2.000001}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -9.296636, y: 3.0336907, z: -8.561628}
+  m_LocalScale: {x: 0.5352464, y: 0.5, z: 2}
   m_Children:
   - {fileID: 4334438068584046}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4903618024673208
 Transform:
   m_ObjectHideFlags: 1
@@ -2026,6 +2026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdTime: 0
   dropOffPoints: []
+  particleEffect: {fileID: 0}
   isMovable: 0
   open: {r: 0, g: 1, b: 0.021962404, a: 1}
   closed: {r: 1, g: 0, b: 0, a: 1}
@@ -2043,6 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdTime: 0
   dropOffPoints: []
+  particleEffect: {fileID: 0}
   isMovable: 0
   open: {r: 0, g: 0, b: 0, a: 0}
   closed: {r: 0, g: 0, b: 0, a: 0}
@@ -2060,6 +2062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdTime: 0
   dropOffPoints: []
+  particleEffect: {fileID: 0}
   isMovable: 0
   open: {r: 0, g: 0, b: 0, a: 0}
   closed: {r: 0, g: 0, b: 0, a: 0}

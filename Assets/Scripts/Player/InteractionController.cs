@@ -95,7 +95,7 @@ public class InteractionController : MonoBehaviour {
             InteractableObject currentObject = other.GetComponent<InteractableObject>();
             if (currentObject.isMovable)
                 currentMovableObject = currentObject;
-            else
+            else if(!toggleObjects.Contains(currentObject))
                 toggleObjects.Add(currentObject);
             //objects.Add(other.GetComponent<InteractableObject>());
             
