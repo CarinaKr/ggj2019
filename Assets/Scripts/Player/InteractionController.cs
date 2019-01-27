@@ -7,7 +7,7 @@ public class InteractionController : MonoBehaviour {
     
     public string holdInteraction="Hold0";
     public string pickUp="PickUp0";
-    public Image[] holdCounter;
+    public Image[] holdCounter,holdCounterBackground;
 
     private Dictionary<InteractableObject, float> holdTime;
     private bool isHolding;
@@ -36,15 +36,19 @@ public class InteractionController : MonoBehaviour {
                 {
                     holdTime.Add(toggleObjects[i], toggleObjects[i].holdTime);
                     holdCounter[i].enabled = true;
+                    holdCounterBackground[i].enabled = true;
                 }
                 if (toggleObjects.Count == 1)
                 {
                     holdCounter[0].rectTransform.localPosition = new Vector3(0, 0,0);
+                    holdCounterBackground[0].rectTransform.localPosition = new Vector3(0, 0,0);
                 }
                 else if (toggleObjects.Count == 2)
                 {
                     holdCounter[0].rectTransform.localPosition = new Vector3(0 - holdCounter[0].rectTransform.sizeDelta.x / 2, 0,0);
+                    holdCounterBackground[0].rectTransform.localPosition = new Vector3(0 - holdCounter[0].rectTransform.sizeDelta.x / 2, 0, 0);
                     holdCounter[1].rectTransform.localPosition = new Vector3(0 + holdCounter[0].rectTransform.sizeDelta.x / 2, 0,0);
+                    holdCounterBackground[1].rectTransform.localPosition = new Vector3(0 + holdCounter[0].rectTransform.sizeDelta.x / 2, 0,0);
                 }
             }
             else
@@ -67,6 +71,10 @@ public class InteractionController : MonoBehaviour {
         else if (Input.GetButtonUp(holdInteraction))
         {
             foreach(Image counter in holdCounter)
+            {
+                counter.enabled = false;
+            }
+            foreach (Image counter in holdCounterBackground)
             {
                 counter.enabled = false;
             }
