@@ -41,12 +41,14 @@ public class Curtains : InteractableObject {
         {
             animator.SetBool("CurtainOn", !open);
             yield return new WaitForSeconds(0.5f);
+            GetComponent<AudioSource>().Play();
             godRay.SetActive(open);
         }
         else
         {
             animator.SetBool("CurtainOn", !open);
             yield return new WaitForSeconds(0.5f);
+            GetComponent<AudioSource>().Play();
             godRay.SetActive(open);
         }
         
