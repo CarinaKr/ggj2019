@@ -17,6 +17,7 @@ public class CurtainsManager : MonoBehaviour {
 
     private IEnumerator AddPoints()
     {
+        yield return new WaitForSeconds(10f);
         while (countPoints)
         {
             yield return new WaitForSeconds(1f);

@@ -7,10 +7,10 @@ public class InteractableObject : MonoBehaviour {
     public int holdTime;
     public Transform[] dropOffPoints;
     public ParticleSystem particleEffect;
-    
+
 
     //public bool countPoints;
-    public bool state { get; set; }
+    public bool state;
     public bool isMovable;
 
     protected GameManager gameManager;
