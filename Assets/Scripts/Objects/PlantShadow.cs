@@ -20,6 +20,7 @@ public class PlantShadow : InteractableObject {
     public override void PickUp(GameObject player)
     {
         base.PickUp(player);
+        GetComponent<AudioSource>().Play();
     }
 
     public override void Drop(GameObject player)

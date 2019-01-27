@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 4433609249684780}
   - component: {fileID: 114507395391568912}
   - component: {fileID: 136600712755073532}
+  - component: {fileID: 82005233038020022}
   m_Layer: 0
   m_Name: Spiegel
   m_TagString: Object
@@ -257,13 +258,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746655409302634}
-  m_LocalRotation: {x: 0.7076132, y: 0.018136263, z: -0.028154075, w: 0.70580596}
+  m_LocalRotation: {x: 0.7353635, y: 0.019251257, z: -0.027403742, w: 0.67684495}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.005000001, y: 0.005000001, z: 0.005000002}
   m_Children: []
   m_Father: {fileID: 4734360845752992}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0.120000005, y: 89.184006, z: -3.752}
+  m_LocalEulerAnglesHint: {x: 94.789, y: 9.822998, z: 6.038986}
 --- !u!4 &4775085085240196
 Transform:
   m_ObjectHideFlags: 1
@@ -312,7 +313,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 106
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -645,6 +646,101 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746655409302634}
   m_Enabled: 1
+--- !u!82 &82005233038020022
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538497153621722}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8b551577d6c51a44faeeae3664733b44, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114507395391568912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -656,12 +752,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a562c64a43a221b43a7d666ecd4bdbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdTime: 1
+  holdTime: 2
   dropOffPoints: []
   particleEffect: {fileID: 0}
+  state: 1
   isMovable: 0
   mirrorOpen: 0
-  countPoints: 0
+  countPoints: 1
   closedMirror: {fileID: 1968041156608988}
   openMirror: {fileID: 1162272071490612}
 --- !u!136 &136600712755073532
