@@ -33,6 +33,7 @@ public class Mirror : InteractableObject
     public override void HoldInteraction()
     {
         Debug.Log("open or close mirror");
+        GetComponent<AudioSource>().Play();
         state = !state;
         if (state)
         {
