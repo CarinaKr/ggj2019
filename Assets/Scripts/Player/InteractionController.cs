@@ -58,7 +58,7 @@ public class InteractionController : MonoBehaviour {
                 {
                     holdTime[obj[i]] = holdTime[obj[i]] - Time.deltaTime;
                     Debug.Log("calculate fill amount: "+ holdTime[obj[i]] + " / " + (float)obj[i].holdTime);
-                    holdCounter[i].fillAmount = holdTime[obj[i]]/ (float)obj[i].holdTime;
+                    holdCounter[i].fillAmount =1-( holdTime[obj[i]]/ (float)obj[i].holdTime);
                     Debug.Log("fill amount: " + holdCounter[i].fillAmount);
                     if (holdTime[obj[i]] <= 0)
                     {
